@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { type SVGProps, type ReactElement } from 'react';
 
 export type CycleIconType = 'dining' | 'travel' | 'curation' | 'repeat';
 
@@ -10,7 +10,7 @@ interface CycleIconProps {
   size?: number;
 }
 
-const icons: Record<CycleIconType, React.ReactElement> = {
+const icons: Record<CycleIconType, ReactElement<SVGProps<SVGSVGElement>>> = {
   dining: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       {/* Fork */}
@@ -42,7 +42,7 @@ const icons: Record<CycleIconType, React.ReactElement> = {
   ),
 };
 
-export function CycleIcon({ type, className, size }: CycleIconProps): React.ReactElement {
+export function CycleIcon({ type, className, size }: CycleIconProps): ReactElement {
   const sizeValue = size ?? 24;
   
   return (
@@ -63,7 +63,7 @@ export function CycleIcon({ type, className, size }: CycleIconProps): React.Reac
 }
 
 // Helper to render icon from step.icon string
-export function renderCycleIcon(iconId: string, className?: string, size?: number): React.ReactElement {
+export function renderCycleIcon(iconId: string, className?: string, size?: number): ReactElement {
   return <CycleIcon type={iconId as CycleIconType} className={className} size={size} />;
 }
 

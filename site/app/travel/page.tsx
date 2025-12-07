@@ -6,6 +6,7 @@ import { Button } from '@/components/Button';
 import { domesticRegions, internationalRegions, type TravelRegion } from '@/data/travelRegions';
 import Image from 'next/image';
 import { CycleVersion08 } from '@/components/cycle-concepts';
+import type { ReactElement } from 'react';
 
 export const metadata: Metadata = {
   title: 'Travel',
@@ -81,7 +82,7 @@ const upcomingJourneys = [
   },
 ];
 
-function getRegionIcon(region: TravelRegion): JSX.Element {
+function getRegionIcon(region: TravelRegion): ReactElement {
   const baseProps = {
     className: 'w-5 h-5',
     viewBox: '0 0 24 24',
