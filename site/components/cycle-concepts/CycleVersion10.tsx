@@ -44,7 +44,10 @@ export function CycleVersion10(): React.ReactElement {
           <div className="sticky top-32">
             <span 
               className="inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6"
-              style={{ background: 'var(--theme-accent)', color: 'white' }}
+              style={{ 
+                background: 'var(--cycle-badge-bg, var(--theme-accent))', 
+                color: 'var(--cycle-badge-fg, white)' 
+              }}
             >
               The JoePlates Cycle
             </span>
@@ -94,8 +97,11 @@ export function CycleVersion10(): React.ReactElement {
                     `}
                     style={{
                       background: activeIndex === index || index === 0 
-                        ? 'var(--theme-accent)' 
+                        ? 'var(--badge-solid-bg, var(--theme-accent))' 
                         : 'rgba(255,255,255,0.1)',
+                      color: activeIndex === index || index === 0
+                        ? 'var(--badge-solid-fg, white)'
+                        : '#ffffff',
                     }}
                   >
                     <CycleIcon type={step.icon as CycleIconType} size={16} />
@@ -150,12 +156,21 @@ export function CycleVersion10(): React.ReactElement {
                 <div 
                   className="absolute top-4 left-4 px-3 py-1 rounded-full flex items-center gap-2"
                   style={{
-                    background: index === 0 ? 'var(--theme-accent)' : 'rgba(0,0,0,0.6)',
+                    background: index === 0 ? 'var(--badge-solid-bg, var(--theme-accent))' : 'rgba(0,0,0,0.6)',
                     backdropFilter: 'blur(10px)',
                   }}
                 >
-                  <CycleIcon type={step.icon as CycleIconType} size={20} />
-                  <span className="text-white text-sm font-bold">Step {step.number}</span>
+                  <div
+                    style={{ color: index === 0 ? 'var(--badge-solid-fg, white)' : '#ffffff' }}
+                  >
+                    <CycleIcon type={step.icon as CycleIconType} size={20} />
+                  </div>
+                  <span
+                    className="text-sm font-bold"
+                    style={{ color: index === 0 ? 'var(--badge-solid-fg, white)' : '#ffffff' }}
+                  >
+                    Step {step.number}
+                  </span>
                 </div>
               </div>
 
@@ -193,7 +208,10 @@ export function CycleVersion10(): React.ReactElement {
         <div className="text-center mb-8">
           <span 
             className="inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
-            style={{ background: 'var(--theme-accent)', color: 'white' }}
+            style={{ 
+              background: 'var(--cycle-badge-bg, var(--theme-accent))', 
+              color: 'var(--cycle-badge-fg, white)' 
+            }}
           >
             The JoePlates Cycle
           </span>
@@ -210,7 +228,7 @@ export function CycleVersion10(): React.ReactElement {
             key={step.id}
             className="p-6 rounded-xl"
             style={{
-              background: index === 0 ? 'var(--theme-accent)' : 'var(--theme-bg-secondary)',
+              background: index === 0 ? 'var(--badge-solid-bg, var(--theme-accent))' : 'var(--theme-bg-secondary)',
               border: '1px solid rgba(255,255,255,0.1)',
             }}
           >
@@ -218,13 +236,25 @@ export function CycleVersion10(): React.ReactElement {
               <Image src={step.image} alt={step.label} fill className="object-cover" />
             </div>
             <div className="flex items-center gap-2 mb-2">
-              <CycleIcon type={step.icon as CycleIconType} size={24} />
-              <span className="text-xs font-bold text-white/70">Step {step.number}</span>
+              <div
+                style={{ color: index === 0 ? 'var(--badge-solid-fg, white)' : '#ffffff' }}
+              >
+                <CycleIcon type={step.icon as CycleIconType} size={24} />
+              </div>
+              <span
+                className="text-xs font-bold"
+                style={{ color: index === 0 ? 'var(--badge-solid-fg, white)' : '#ffffffb3' }}
+              >
+                Step {step.number}
+              </span>
             </div>
             <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
               {step.label}
             </h3>
-            <p className={`text-sm ${index === 0 ? 'text-white/90' : 'text-white/60'}`}>
+            <p
+              className="text-sm"
+              style={{ color: index === 0 ? 'var(--badge-solid-fg, white)' : '#ffffff99' }}
+            >
               {step.story}
             </p>
           </div>

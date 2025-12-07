@@ -148,7 +148,13 @@ export default function HomePage(): React.ReactElement {
               >
                 Members
               </h3>
-              <span className="px-2 py-0.5 text-white text-xs font-semibold rounded" style={{ background: 'var(--theme-accent)' }}>
+              <span
+                className="px-2 py-0.5 text-xs font-semibold rounded"
+                style={{
+                  background: 'var(--badge-solid-bg, var(--theme-accent))',
+                  color: 'var(--badge-solid-fg, white)',
+                }}
+              >
                 PRIORITY SCHEDULING
               </span>
             </div>

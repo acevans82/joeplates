@@ -10,6 +10,10 @@
   --color-bg: #FFFFFF;
   --color-panel-light: #EEEEEE;
   --btn-primary-fg: #FFFFFF;
+  --cycle-badge-bg: var(--theme-accent, #7A611D);
+  --cycle-badge-fg: #FFFFFF;
+  --badge-solid-bg: var(--theme-accent, #7A611D);
+  --badge-solid-fg: #FFFFFF;
   
   /* Text Colors */
   --color-ink: #111111;
@@ -305,6 +309,10 @@
   --theme-bg-secondary: #1a1a1a;
   --theme-accent: #ffffff;
   --btn-primary-fg: #000000;
+  --cycle-badge-bg: #ffffff;
+  --cycle-badge-fg: #000000;
+   --badge-solid-bg: #ffffff;
+   --badge-solid-fg: #000000;
   --theme-corner-radius: 0;
   --theme-section-spacing: 8rem;
   --theme-card-shadow: none;
