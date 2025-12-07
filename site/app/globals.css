@@ -9,6 +9,7 @@
   --color-bg-dark: #090B0A;
   --color-bg: #FFFFFF;
   --color-panel-light: #EEEEEE;
+  --btn-primary-fg: #FFFFFF;
   
   /* Text Colors */
   --color-ink: #111111;
@@ -303,6 +304,7 @@
   --theme-bg-primary: #0f0f0f;
   --theme-bg-secondary: #1a1a1a;
   --theme-accent: #ffffff;
+  --btn-primary-fg: #000000;
   --theme-corner-radius: 0;
   --theme-section-spacing: 8rem;
   --theme-card-shadow: none;
@@ -489,7 +491,7 @@ body {
     color-mix(in srgb, var(--theme-accent, #7A611D) 88%, #ffffff 12%) 0%,
     var(--theme-accent, #7A611D) 100%
   );
-  color: white;
+  color: var(--btn-primary-fg, #FFFFFF);
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--theme-accent, #7A611D) 65%, transparent);
   box-shadow:
