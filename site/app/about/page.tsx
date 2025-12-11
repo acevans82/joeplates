@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -7,7 +8,8 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Nine lives, one calling. Joe has been a touring musician, tech founder, and mentor—and through it all, the guy cooking for everyone after hours.',
+  description:
+    'Cruise ships adventure program pioneer, world-touring rock musician, tech founder, mentor—all connected by a common thread: connecting people and creating unforgettable life experiences.',
 };
 
 const values = [
@@ -23,7 +25,7 @@ export default function AboutPage(): React.ReactElement {
     <>
       <PageHero
         title="Nine Lives. One Calling."
-        subtitle="Joe's mission is simple: bring the world to your table."
+        subtitle="Cruise ships adventure program pioneer, world-touring rock musician, tech founder, mentor, all connected through a common thread—connecting people and creating unforgettable life experiences."
         size="large"
         backgroundImage="/images/about/joe-bordeaux.jpg"
       />
@@ -41,28 +43,20 @@ export default function AboutPage(): React.ReactElement {
           </div>
           <div>
             <SectionHeading
-              title="Nine Lives, All Pointing Here"
+              title="Nine Lives"
               centered={false}
             />
-            <p className="text-white/70 text-lg leading-relaxed mb-6">
-              Joe has done a lot of things that don&apos;t obviously go together—until you&apos;re sitting at his table.
+            <p className="text-white/70 text-lg leading-relaxed mb-4">
+              Cruise ships adventure program pioneer, world-touring rock musician, tech founder, mentor, all connected through a common thread, connecting people and creating unforgettable life experiences. The JoePlates story reads more like a serendipitous tale than a series of disconnected chapters.
             </p>
-            <div className="space-y-4 text-white/80">
-              <p className="flex items-start gap-4">
-                <span className="text-[var(--color-accent-gold)]">→</span>
-                He&apos;s been a touring guitarist in rock bands, learning how to read a room and build a setlist.
-              </p>
-              <p className="flex items-start gap-4">
-                <span className="text-[var(--color-accent-gold)]">→</span>
-                He&apos;s built companies and mentored entrepreneurs, obsessed with helping people design lives they actually want.
-              </p>
-              <p className="flex items-start gap-4">
-                <span className="text-[var(--color-accent-gold)]">→</span>
-                He&apos;s wandered through vineyards, markets, and kitchens around the world, cooking for friends, clients, and strangers who quickly stopped feeling like strangers.
-              </p>
-            </div>
-            <p className="text-white/70 mt-6">
-              Through every chapter, a pattern kept surfacing: late nights around a table, bottles open, food disappearing, people exhaling and actually connecting. JoePlates is simply what happens when you decide that&apos;s the main thing—and you build a life around it.
+            <p className="text-white/70 text-lg leading-relaxed mb-4">
+              Each chapter is tied together by world wanderings, late nights swapping stories and recipes with chefs, wine collectors and friends around the world, and a deep passion for connecting people through unforgettable experiences. This is the heart of the JoePlates story, all converged in the place that mattered most, bringing people together and building unforgettable memories.
+            </p>
+            <p className="text-white/70 text-lg leading-relaxed mb-4">
+              Behind each bite, sip, or horizon is a memory of experience made sweeter by sharing with others—a midnight bite of croquetas in Seville, Spain, a stroll through Bordeaux’s oldest vineyards, the wide expanse of the Scottish Highlands.
+            </p>
+            <p className="text-white/70 text-lg leading-relaxed">
+              These moments compelled Rohan to launch Joe Plates, first as a part time pursuit of passion, now as a dedicated calling, to elevate life experience for others through food, wine, exploration, and each other.
             </p>
           </div>
         </div>
@@ -76,21 +70,26 @@ export default function AboutPage(): React.ReactElement {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl bg-[var(--color-primary-navy)] rounded-[var(--theme-corner-radius)] p-8">
             <p className="text-white/70 leading-relaxed mb-4">
-              There&apos;s a night in Bordeaux that Joe will never forget.
+              There&apos;s a night in Bordeaux that Joe will never forget. He was on a trip with his dear friend Dave (known and beloved to all as &quot;Dr. Dave&quot;), a man battling a brutal kind of cancer with an almost immeasurable amount of generosity, gratitude and appetite for life.
             </p>
             <p className="text-white/70 leading-relaxed mb-4">
-              He was on a trip with his friend and client Dr. Dave, a man battling a brutal kind of cancer with an almost ridiculous amount of gratitude and appetite. Joe had been his private chef, friend, confidante, and adventure co-conspirator.
+              For the last two and a half years Joe had been his private chef, friend, confidante, and adventure co-conspirator.
             </p>
             <blockquote className="border-l-4 border-[var(--color-accent-gold)] pl-6 my-6">
               <p className="text-white text-lg italic">
-                &quot;Keep doing this. Doing this for people. Food, wine, all of this life concierge stuff. Look at what we&apos;ve built—the people, the memories, the way we&apos;re celebrating being alive. Promise me you&apos;ll keep doing it.&quot;
+                &quot;You HAVE to keep doing this. Promise me you will keep doing this — the food, the wine, all of this, this life concierge stuff. Look at what we&apos;ve built around us—the people, the community, the memories, the way we&apos;re celebrating being alive. Promise me!&quot;
               </p>
             </blockquote>
             <p className="text-white/70 leading-relaxed">
               Joe promised.
             </p>
             <p className="text-white/70 leading-relaxed mt-4">
-              JoePlates is him keeping that promise—turning what started as a weekend hobby into an all-consuming passion: cooking, traveling, bringing people together, and giving more people nights that feel like that.
+              JoePlates is the continuation of that promise—turning what started as a weekend hobby into an all-consuming passion: cooking, traveling, bringing people together, and giving more people nights that feel like this one.
+            </p>
+            <p className="text-white/70 leading-relaxed mt-4">
+              <Link href="/stories/the-barbaric-yawp-and-beginning" className="text-[var(--color-accent-gold)] underline underline-offset-4">
+                Read the full story →
+              </Link>
             </p>
           </div>
           <div className="relative aspect-square rounded-[var(--theme-corner-radius)] overflow-hidden">
@@ -111,21 +110,24 @@ export default function AboutPage(): React.ReactElement {
         />
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-white/70 text-lg leading-relaxed mb-6">
-            Today, JoePlates is a high-touch service brand for people who want experiences, not transactions.
+            Today, Joe Plates is a high-touch service brand for those who want more than just a meal, a trip, or a bottle. We offer private dining, collector wine and spirits sourcing, bespoke travel experiences, and cultural discovery—all inspired, all personalized, all designed to stir the soul.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4">
               <p className="text-white font-medium">Private dining that feels like it could only happen at your table</p>
             </div>
             <div className="p-4">
-              <p className="text-white font-medium">Wine and spirits curation grounded in real travel and relationships</p>
+              <p className="text-white font-medium">Collector wine and spirits sourcing grounded in real travel and relationships</p>
             </div>
             <div className="p-4">
-              <p className="text-white font-medium">Travel that trades checklists for connection</p>
+              <p className="text-white font-medium">Bespoke travel experiences and cultural discovery that trade checklists for connection</p>
             </div>
           </div>
-          <p className="text-white/60 mt-8">
-            From your kitchen to the Highlands, from your cellar to the sea—Joe shows up as the guy you&apos;d invite anyway, who just happens to be very, very good at this.
+          <p className="text-white/60 mt-8 text-lg leading-relaxed">
+            This isn&apos;t about checking boxes. It&apos;s about creating your own. Whether that means a private tasting in your home, a moonlit dinner at your favorite location, or a highly prized and handpicked collectible arriving from halfway around the world, Joe Plates exists to elevate life—one &quot;plate&quot; at a time.
+          </p>
+          <p className="text-white/60 mt-4">
+            From your kitchen to the Scottish Highlands, from your cellar to the sea—Joe is the guy you&apos;d invite anyway, who just happens to be very, very good at this.
           </p>
         </div>
         

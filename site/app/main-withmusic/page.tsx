@@ -9,11 +9,11 @@ import { getFeaturedThemes } from '@/data/diningThemes';
 import { useMusicPlayer } from '@/contexts/MusicPlayerContext';
 
 const themeImages: Record<string, string> = {
-  'a-night-in-seville': '/images/dining-themes/seville-market.jpeg',
-  'tour-de-france': '/images/wine/pontet-canet-vertical.jpg',
-  'the-faces-of-champagne': '/images/dining-themes/champagne-theme.jpeg',
-  'island-heat': '/images/food/grilled-octopus.jpg',
-  'ode-to-mushrooms': '/images/dining-themes/mushroom-dish.jpg',
+  'a-night-in-seville': '/images/dining-themes/a-night-in-seville.jpeg',
+  'tour-de-france': '/images/dining-themes/tour-de-france.jpeg',
+  'the-faces-of-champagne': '/images/dining-themes/the-faces-of-champagne.jpeg',
+  'island-heat': '/images/dining-themes/island-heat.jpeg',
+  'ode-to-mushrooms': '/images/dining-themes/ode-to-mushrooms.jpeg',
 };
 
 export default function MainWithMusicPage(): React.ReactElement {

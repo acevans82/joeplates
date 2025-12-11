@@ -5,9 +5,9 @@ import { Card } from './Card';
 const pillars = [
   {
     title: 'Private Dining',
-    description: 'Joe designs multi-course menus inspired by his travels and cooks them wherever you are—your home, your office, a rented villa, a cabin in the woods.',
+    description: 'Multi-course menus, inspired by continuous world wanderings, prepared wherever you are - your home, your vacation rental, a remote cabin, anywhere!',
     href: '/private-dining',
-    image: '/images/food/glazed-meatballs.jpg',
+    image: '/images/food/IMG_0737.JPG',
   },
   {
     title: 'Travel',

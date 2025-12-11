@@ -11,25 +11,37 @@ export interface Story {
 export const stories: Story[] = [
   {
     slug: 'the-barbaric-yawp-and-beginning',
-    title: 'The Barbaric Yawp and Beginning',
+    title: "Dr. Dave's Story - The Beginning",
     excerpt: 'There\'s a night in Bordeaux that Joe will never forget. Over Armagnac, a promise was made that would change everything.',
     date: '2024-01-15',
     featured: true,
     image: '/images/about/joe-bordeaux.jpg',
     content: `
-There's a night in Bordeaux that Joe will never forget.
+I’m sitting in a small hotel cafe in Bordeaux, France with my dear friend, Dave (known to all as Dr. Dave) looking out over the old square, the fountain, the river, sipping on an Armagnac from 1975. It’s one of those moments where there’s not much to say. Life is pretty much perfect. People are moving to and fro and around us like battery operated puzzle pieces, each with a clear picture of their destination. The square maintains a quiet bustle, just busy enough to be entertaining. Dr. Dave and I tip our glasses to each other with a nodding recognition of satisfaction. we talked about this for almost a year, sketched it out over multiple meals and late nights and Google Searches and YouTube vids. It was his dream to come back here and to make all of this happen, right down to the very moment we were sharing. (Dave had a knack for planning down to the micro detail).
 
-He was on a trip with his friend and client Dr. Dave, a man battling a brutal kind of cancer with an almost ridiculous amount of gratitude and appetite. Joe had been his private chef, friend, confidante, and adventure co-conspirator.
+I gaze over at my friend, who has become my hero over the time I have known him and take in a deep breath of gratitude. For the last 2+ years I have been Dave’s friend - turned private chef - turned close confidante and adventure co-conspirator - and now, brother. Meanwhile, Dave has a vicious version of cancer. The kind that makes one cringe when it gets called it out. The “oh no, not that one” cancer. 
 
-Over Armagnac, Dave looked at him and said: "Keep doing this. Doing this for people. Food, wine, all of this life concierge stuff. Look at what we've built—the people, the memories, the way we're celebrating being alive. Promise me you'll keep doing it."
+Cancer aside, Dave and I are a modern model for symbiosis. We love to hike and explore. We love to be surrounded by good people. I’m obsessed with food and cooking and wine - and WOW, CAN HE EAT! Anything, all of it, French, Spanish, German, Thai - and always with an almost ferocious display of gratitude. The celebration of food, wine and camaraderie are our mutual lives’ catharsis and a cornerstone of the cancer defiant bubble we have created - a fantastic bubble filled with good souls, endless gatherings, days on the lake and on wooded trails, late night movies and a constant scheming for adventures and getaways (even when mobility and other hinderances interrupted) - all leading up to this present escape and our current location. And here we sit, savoring.
 
-Joe promised.
+“Promise me you will keep doing this,” Dave speaks after a long pause.
 
-JoePlates is him keeping that promise—turning what started as a weekend hobby into an all-consuming passion: cooking, traveling, bringing people together, and giving more people nights that feel like that.
+“Keep doing what?” I reply.
 
-The name comes from what Dave would shout at the end of particularly memorable evenings, arms raised to the sky in gratitude and defiance: his "barbaric yawp" to the universe. A declaration that this life is meant to be lived fully, savored deeply, and shared generously.
+“THIS!, Dave repeats passionately, “THIS! Doing this for people. Food and wine and, you know, all of this “life concierge” stuff. Look at what we have built over the last years. The people, the relationships, the memories, the meals. It’s like a small model for the way people are supposed to live, the way we should celebrate being alive, and with the realization that it doesn’t last forever, that we are just here for a short time. A really short time.”
 
-Every JoePlates experience carries a piece of that night in Bordeaux. Every table set, every bottle opened, every journey planned is an echo of that promise between friends.
+I look away trying to disguise my eyes that are welling up while processing internally... 
+
+“(Expletive), I scream inside my head, I’m going to miss this guy. He has no clue of his impact on the world and on every human being that encounters him, right down to me. He is a walking model for triumphant living, blazing a trail of gratitude no matter what life’s circumstances have delivered. Only once have I seen frustration take him in almost 3 years and a continuous stream of “healing but not healed” diagnosis”.
+
+Dave continued, 
+
+“And the thing is, you LOVE this,’ It’s like you were born to do this, cook, travel, bring people together, show up like Santa Claus with a big bag of goodies. It just fits you, and it brings so much happiness. I’m serious. Promise me.
+
+I stared ahead pensively letting Dr. Dave’s words saturate. Taking a drink of my Armagnac, I felt it roll down my throat, warm, smooth and velvety with just a slight burn. I returned Dr. Dave’s glance. 
+
+“OK buddy. I will. I promise.”
+
+And so, in the spirit of Dr. Dave, and with a Barbaric Yawp, I’m proud to announce the launch of JoePlates, Inc. I/we are going to bring the world to your table and have insane amounts of fun while doing so. Join me for a meal, join me on the road, or just have your empty glass ready for when I get back.
     `.trim(),
   },
   {

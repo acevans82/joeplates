@@ -57,8 +57,11 @@ const travelGallery = [
   { src: '/images/travel/porto-cityscape.jpg', alt: 'Porto, Portugal', location: 'Portugal' },
   { src: '/images/travel/seville-plaza.jpg', alt: 'Plaza de España, Seville', location: 'Spain' },
   { src: '/images/travel/tulum-boats.jpeg', alt: 'Tulum fishing boats', location: 'Mexico' },
-  { src: '/images/travel/edinburgh-architecture.jpeg', alt: 'Edinburgh architecture', location: 'Scotland' },
-  { src: '/images/travel/porto-waterfront.jpg', alt: 'Porto waterfront', location: 'Portugal' },
+  { src: '/images/travel/IMG_2802.JPG', alt: 'Parisian architecture in France', location: 'France' },
+  { src: '/images/travel/coastal-cliffs.jpg', alt: 'Coastal cliffs in England', location: 'England' },
+  { src: '/images/travel/IMG_2974.JPG', alt: 'Vineyard landscape in Oregon', location: 'Oregon' },
+  { src: '/images/people/dinner-group.jpeg', alt: 'Dinner group in Ohio', location: 'Ohio' },
+  { src: '/images/travel/travel-2.jpg', alt: 'Scenes from across the United States', location: 'Greater US' },
 ];
 
 const upcomingJourneys = [

@@ -163,7 +163,11 @@ export default function PrivateDiningPage(): React.ReactElement {
               </h3>
               <div className="space-y-8">
                 {themes.map((theme) => (
-                  <div key={theme.slug} className="bg-[var(--color-primary-navy)] rounded-[var(--theme-corner-radius)] overflow-hidden">
+                  <div
+                    key={theme.slug}
+                    id={theme.slug}
+                    className="bg-[var(--color-primary-navy)] rounded-[var(--theme-corner-radius)] overflow-hidden"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                       {theme.image && (
                         <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px]">

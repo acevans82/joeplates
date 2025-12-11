@@ -13,11 +13,11 @@ import Image from 'next/image';
 
 // Map dining themes to appropriate images
 const themeImages: Record<string, string> = {
-  'night-in-seville': '/images/dining-themes/seville-market.jpeg',
-  'tour-de-france': '/images/wine/pontet-canet-vertical.jpg',
-  'faces-of-champagne': '/images/dining-themes/champagne-theme.jpeg',
-  'island-heat': '/images/food/grilled-octopus.jpg',
-  'ode-to-mushrooms': '/images/dining-themes/mushroom-dish.jpg',
+  'a-night-in-seville': '/images/dining-themes/a-night-in-seville.jpeg',
+  'tour-de-france': '/images/dining-themes/tour-de-france.jpeg',
+  'the-faces-of-champagne': '/images/dining-themes/the-faces-of-champagne.jpeg',
+  'island-heat': '/images/dining-themes/island-heat.jpeg',
+  'ode-to-mushrooms': '/images/dining-themes/ode-to-mushrooms.jpeg',
 };
 
 export default function HomePage(): React.ReactElement {
@@ -28,7 +28,7 @@ export default function HomePage(): React.ReactElement {
       {/* Hero Section */}
       <PageHero
         title="Dine → Travel → Curate → Repeat."
-        subtitle="Joe travels the world, curates what he finds, and turns it into intimate private dining and unforgettable journeys for the people he calls Guests and Members."
+        subtitle={'Chef Joseph Rohan, "Joe" travels the world, collects the treasures that he finds, and turns them into intimate private dining encounters and unforgettable journeys for Guests and Members.'}
         size="large"
         backgroundGif="/images/hero/hero-animation.gif"
       >
@@ -104,7 +104,7 @@ export default function HomePage(): React.ReactElement {
               Guests
             </h3>
             <p className="text-white/70 mb-6 leading-relaxed flex-grow">
-              Guests are always welcome. If you&apos;re planning a celebration or simply want to gather your favorite people around an unforgettable dinner, you can request a private dining date and Joe will help you make it happen. A week&apos;s notice is ideal for special orders and hard-to-find items, but if the calendar lines up, he has a way of pulling off magic on short notice.
+              Guests are always welcome. If you&apos;re planning a celebration or simply want to gather your favorite people around an unforgettable dinner, you can request a private dining date and Joe will help you make it happen. A week&apos;s notice is ideal for special orders and hard-to-find items, but short notice requests are always welcome.  After all, life happens.
             </p>
             <div className="mt-auto">
               <Button href="/private-dining" variant="primary">
@@ -197,6 +197,8 @@ export default function HomePage(): React.ReactElement {
               key={theme.slug}
               title={theme.name}
               description={theme.shortDescription}
+              href={`/private-dining#${theme.slug}`}
+              ctaLabel="... read more"
               image={themeImages[theme.slug] || '/images/food/dish-1.jpg'}
             />
           ))}
@@ -212,7 +214,7 @@ export default function HomePage(): React.ReactElement {
       <Section background="primary">
         <SectionHeading
           title="A Word from Guests & Members"
-          subtitle="These are real people whose lives Joe has cooked, poured, and wandered alongside."
+          subtitle="From real people whose lives Joe has cooked, poured, and wandered alongside."
         />
         <TestimonialCarousel />
       </Section>

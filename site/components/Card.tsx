@@ -17,6 +17,7 @@ interface CardProps {
   isGlobalMusicPlaying?: boolean;
   isActiveTrack?: boolean;
   onHoverPlayIntent?: () => void;
+  ctaLabel?: string;
 }
 
 export function Card({
@@ -31,6 +32,7 @@ export function Card({
   isGlobalMusicPlaying,
   isActiveTrack,
   onHoverPlayIntent,
+  ctaLabel,
 }: CardProps): React.ReactElement {
   const sizeClasses = {
     default: 'p-6',
@@ -112,7 +114,7 @@ export function Card({
           className="mt-4 flex items-center gap-2 text-sm font-medium"
           style={{ color: 'var(--theme-accent, #7A611D)' }}
         >
-          <span>Learn more</span>
+          <span>{ctaLabel || 'Learn more'}</span>
           <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
