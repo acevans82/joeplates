@@ -3,6 +3,7 @@ import { PageHero } from '@/components/PageHero';
 import { Section } from '@/components/Section';
 import { SectionHeading } from '@/components/SectionHeading';
 import { contactInfo } from '@/data/navigation';
+import { ContactForm } from '@/components/forms/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -74,82 +75,8 @@ export default function ContactPage(): React.ReactElement {
             </div>
           </div>
 
-          {/* Contact Form Placeholder */}
-          <div className="bg-[var(--color-secondary-navy)] rounded-[var(--theme-corner-radius)] p-8">
-            <h3 className="text-xl font-semibold text-white mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-              Send a Note
-            </h3>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-white/70 text-sm mb-2">Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-white/70 text-sm mb-2">Phone (optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-              <div>
-                <label htmlFor="topic" className="block text-white/70 text-sm mb-2">What are you reaching out about? *</label>
-                <select
-                  id="topic"
-                  name="topic"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors"
-                >
-                  <option value="">Select a topic</option>
-                  <option value="private-dining">Private Dining</option>
-                  <option value="curation">Collection & Curation</option>
-                  <option value="travel">Travel</option>
-                  <option value="membership">Membership</option>
-                  <option value="other">Something else</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-white/70 text-sm mb-2">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell Joe what you're dreaming up..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-[var(--color-accent-gold)] text-white font-semibold rounded-[var(--theme-corner-radius)] hover:bg-[var(--color-accent-gold)]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-gold)]/50 focus:ring-offset-2 focus:ring-offset-[var(--color-secondary-navy)]"
-              >
-                Send Message
-              </button>
-              <p className="text-white/40 text-xs text-center">
-                We&apos;ll get back to you within 24-48 hours.
-              </p>
-            </form>
-          </div>
+          {/* Contact Form */}
+          <ContactForm />
         </div>
       </Section>
     </>
