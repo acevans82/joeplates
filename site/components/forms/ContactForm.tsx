@@ -12,7 +12,6 @@ type FieldErrors = {
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqarodpj';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const PHONE_ALLOWED_CHARS = /^[\d\s()+-]*$/;
 
 function validateEmail(email: string): string {
   if (!email) return '';
@@ -22,14 +21,20 @@ function validateEmail(email: string): string {
   return '';
 }
 
+function formatPhoneNumber(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 10);
+  
+  if (digits.length === 0) return '';
+  if (digits.length <= 3) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 function validatePhone(phone: string): string {
   if (!phone) return '';
-  if (!PHONE_ALLOWED_CHARS.test(phone)) {
-    return 'Phone number can only contain digits, spaces, and ( ) + -';
-  }
-  const digitsOnly = phone.replace(/\D/g, '');
-  if (digitsOnly.length > 0 && digitsOnly.length < 10) {
-    return 'Please enter a valid phone number';
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length > 0 && digits.length < 10) {
+    return 'Please enter a 10-digit phone number';
   }
   return '';
 }
@@ -53,12 +58,10 @@ export function ContactForm(): React.ReactElement {
   }
 
   function handlePhoneChange(event: ChangeEvent<HTMLInputElement>): void {
-    const value = event.target.value;
-    if (PHONE_ALLOWED_CHARS.test(value)) {
-      setPhone(value);
-      if (fieldErrors.phone) {
-        setFieldErrors((prev) => ({ ...prev, phone: validatePhone(value) }));
-      }
+    const formatted = formatPhoneNumber(event.target.value);
+    setPhone(formatted);
+    if (fieldErrors.phone) {
+      setFieldErrors((prev) => ({ ...prev, phone: validatePhone(formatted) }));
     }
   }
 
