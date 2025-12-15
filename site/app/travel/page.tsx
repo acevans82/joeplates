@@ -59,9 +59,9 @@ const travelGallery = [
   { src: '/images/travel/tulum-boats.jpeg', alt: 'Tulum fishing boats', location: 'Mexico' },
   { src: '/images/travel/IMG_2802.JPG', alt: 'Parisian architecture in France', location: 'France' },
   { src: '/images/travel/coastal-cliffs.jpg', alt: 'Coastal cliffs in England', location: 'England' },
-  { src: '/images/travel/IMG_2974.JPG', alt: 'Vineyard landscape in Oregon', location: 'Oregon' },
+  { src: '/images/travel/oregon-mountain-snow.png', alt: 'Snowy mountain landscape in Oregon', location: 'Oregon' },
   { src: '/images/people/dinner-group.jpeg', alt: 'Dinner group in Ohio', location: 'Ohio' },
-  { src: '/images/travel/travel-2.jpg', alt: 'Scenes from across the United States', location: 'Greater US' },
+  { src: '/images/travel/northwoods-clearing.png', alt: 'Forest clearing with evergreens and blue sky', location: 'Northwoods' },
 ];
 
 const upcomingJourneys = [

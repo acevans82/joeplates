@@ -46,9 +46,9 @@ const processSteps = [
 const foodGallery = [
   { src: '/images/dining/filet-mignon.jpg', alt: 'Filet mignon with carrots' },
   { src: '/images/dining/beef-wellington.jpg', alt: 'Beef Wellington' },
-  { src: '/images/dining/clam-linguine.jpeg', alt: 'Clam linguine pasta' },
-  { src: '/images/dining/charcuterie.jpg', alt: 'Charcuterie board' },
-  { src: '/images/dining/arancini.jpg', alt: 'Arancini appetizer' },
+  { src: '/images/dining/truffle-pasta.png', alt: 'Fresh pasta with black truffle' },
+  { src: '/images/dining/oysters-champagne.png', alt: 'Oysters on ice with lemon and wine' },
+  { src: '/images/dining/steak-ribeye-rosemary.png', alt: 'Sliced ribeye steak with rosemary' },
   { src: '/images/dining/beef-burgundy.jpeg', alt: 'Beef with Burgundy wine' },
 ];
 
