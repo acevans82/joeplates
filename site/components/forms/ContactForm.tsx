@@ -1,17 +1,82 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+type FieldErrors = {
+  email: string;
+  phone: string;
+};
+
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqarodpj';
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const PHONE_ALLOWED_CHARS = /^[\d\s()+-]*$/;
+
+function validateEmail(email: string): string {
+  if (!email) return '';
+  if (!EMAIL_REGEX.test(email)) {
+    return 'Please enter a valid email address';
+  }
+  return '';
+}
+
+function validatePhone(phone: string): string {
+  if (!phone) return '';
+  if (!PHONE_ALLOWED_CHARS.test(phone)) {
+    return 'Phone number can only contain digits, spaces, and ( ) + -';
+  }
+  const digitsOnly = phone.replace(/\D/g, '');
+  if (digitsOnly.length > 0 && digitsOnly.length < 10) {
+    return 'Please enter a valid phone number';
+  }
+  return '';
+}
 
 export function ContactForm(): React.ReactElement {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({ email: '', phone: '' });
+  const [email, setEmail] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+
+  function handleEmailChange(event: ChangeEvent<HTMLInputElement>): void {
+    setEmail(event.target.value);
+    if (fieldErrors.email) {
+      setFieldErrors((prev) => ({ ...prev, email: validateEmail(event.target.value) }));
+    }
+  }
+
+  function handleEmailBlur(): void {
+    setFieldErrors((prev) => ({ ...prev, email: validateEmail(email) }));
+  }
+
+  function handlePhoneChange(event: ChangeEvent<HTMLInputElement>): void {
+    const value = event.target.value;
+    if (PHONE_ALLOWED_CHARS.test(value)) {
+      setPhone(value);
+      if (fieldErrors.phone) {
+        setFieldErrors((prev) => ({ ...prev, phone: validatePhone(value) }));
+      }
+    }
+  }
+
+  function handlePhoneBlur(): void {
+    setFieldErrors((prev) => ({ ...prev, phone: validatePhone(phone) }));
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
+
+    const emailError = validateEmail(email);
+    const phoneError = validatePhone(phone);
+    setFieldErrors({ email: emailError, phone: phoneError });
+
+    if (emailError || phoneError) {
+      return;
+    }
+
     setStatus('submitting');
     setErrorMessage('');
 
@@ -29,6 +94,9 @@ export function ContactForm(): React.ReactElement {
 
       if (response.ok) {
         setStatus('success');
+        setEmail('');
+        setPhone('');
+        setFieldErrors({ email: '', phone: '' });
         form.reset();
       } else {
         const data = await response.json();
@@ -72,7 +140,12 @@ export function ContactForm(): React.ReactElement {
           </p>
           <button
             type="button"
-            onClick={() => setStatus('idle')}
+            onClick={() => {
+              setStatus('idle');
+              setEmail('');
+              setPhone('');
+              setFieldErrors({ email: '', phone: '' });
+            }}
             className="text-[var(--color-accent-gold)] hover:text-[var(--color-accent-gold)]/80 transition-colors underline underline-offset-4"
           >
             Send another message
@@ -114,10 +187,20 @@ export function ContactForm(): React.ReactElement {
             id="email"
             name="email"
             required
+            value={email}
+            onChange={handleEmailChange}
+            onBlur={handleEmailBlur}
             disabled={status === 'submitting'}
-            className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors disabled:opacity-50"
+            className={`w-full px-4 py-3 bg-[var(--color-primary-navy)] border rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:outline-none transition-colors disabled:opacity-50 ${
+              fieldErrors.email
+                ? 'border-red-500 focus:border-red-500'
+                : 'border-white/20 focus:border-[var(--color-accent-gold)]'
+            }`}
             placeholder="your@email.com"
           />
+          {fieldErrors.email && (
+            <p className="mt-1 text-red-400 text-xs">{fieldErrors.email}</p>
+          )}
         </div>
         <div>
           <label htmlFor="phone" className="block text-white/70 text-sm mb-2">
@@ -127,10 +210,20 @@ export function ContactForm(): React.ReactElement {
             type="tel"
             id="phone"
             name="phone"
+            value={phone}
+            onChange={handlePhoneChange}
+            onBlur={handlePhoneBlur}
             disabled={status === 'submitting'}
-            className="w-full px-4 py-3 bg-[var(--color-primary-navy)] border border-white/20 rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:border-[var(--color-accent-gold)] focus:outline-none transition-colors disabled:opacity-50"
+            className={`w-full px-4 py-3 bg-[var(--color-primary-navy)] border rounded-[var(--theme-corner-radius)] text-white placeholder:text-white/40 focus:outline-none transition-colors disabled:opacity-50 ${
+              fieldErrors.phone
+                ? 'border-red-500 focus:border-red-500'
+                : 'border-white/20 focus:border-[var(--color-accent-gold)]'
+            }`}
             placeholder="(555) 123-4567"
           />
+          {fieldErrors.phone && (
+            <p className="mt-1 text-red-400 text-xs">{fieldErrors.phone}</p>
+          )}
         </div>
         <div>
           <label htmlFor="topic" className="block text-white/70 text-sm mb-2">
