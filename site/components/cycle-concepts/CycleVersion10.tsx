@@ -195,7 +195,7 @@ export function CycleVersion10(): React.ReactElement {
               {index < cycleSteps.length - 1 && (
                 <div className="flex justify-center mt-8">
                   <ScrollDownArrow
-                    targetRef={{ current: stepRefs.current[index + 1] }}
+                    getTarget={() => stepRefs.current[index + 1]}
                   />
                 </div>
               )}

@@ -3,6 +3,7 @@
 type ScrollDownArrowProps = {
   targetId?: string;
   targetRef?: React.RefObject<HTMLElement | null>;
+  getTarget?: () => HTMLElement | null;
   className?: string;
   size?: 'sm' | 'md' | 'lg';
 };
@@ -16,16 +17,22 @@ const sizeClasses = {
 export function ScrollDownArrow({
   targetId,
   targetRef,
+  getTarget,
   className,
   size = 'md',
 }: ScrollDownArrowProps): React.ReactElement {
   function handleClick(): void {
-    if (targetRef?.current) {
-      targetRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    let element: HTMLElement | null = null;
+    
+    if (getTarget) {
+      element = getTarget();
+    } else if (targetRef?.current) {
+      element = targetRef.current;
     } else if (targetId) {
-      const element = document.getElementById(targetId);
-      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element = document.getElementById(targetId);
     }
+    
+    element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   return (
